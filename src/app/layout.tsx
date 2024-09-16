@@ -1,3 +1,5 @@
+import SideNav from '@/components/side-nav';
+
 import '../styles/globals.css';
 
 import type { Metadata } from 'next';
@@ -7,7 +9,6 @@ import Header from '@/components/header';
 import HeaderMobile from '@/components/header-mobile';
 import MarginWidthWrapper from '@/components/margin-width-wrapper';
 import PageWrapper from '@/components/page-wrapper';
-import SideNav from '@/components/side-nav';
 
 const inter = Inter({ subsets: ['latin'] });
 
