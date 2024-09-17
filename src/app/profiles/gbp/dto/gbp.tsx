@@ -1,5 +1,6 @@
 export interface Gbp {
   id: string;
+  clientId: string;
   companyName: string;
   bussinessType: string;
   email: string;
