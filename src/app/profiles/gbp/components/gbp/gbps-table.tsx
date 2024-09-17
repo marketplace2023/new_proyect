@@ -98,7 +98,6 @@ const GbpsTable = () => {
             <TableCell>{gbp.certification}</TableCell>
             <TableCell>{gbp.positions}</TableCell>
             <TableCell>{gbp.description}</TableCell>
-            <TableCell>{gbp.createdAt}</TableCell>
           </TableRow>
         ))}
       </TableBody>

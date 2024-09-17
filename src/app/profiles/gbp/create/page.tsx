@@ -68,7 +68,7 @@ const GbpCreate = () => {
     <>
       <div>
         <div>
-          <p className="font-bold text-2xl mb-4">Create Gbp</p>{' '}
+          <p className="font-bold text-2xl mb-4">Crear Gbp</p>{' '}
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
