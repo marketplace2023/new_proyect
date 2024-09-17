@@ -1,4 +1,4 @@
-import { House, Rss, UsersRound } from 'lucide-react';
+import { FaHome, FaRss, FaUsers } from 'react-icons/fa'; // Nuevos íconos de react-icons
 
 import { SideNavItem } from './types';
 
@@ -6,12 +6,12 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
   {
     title: 'Home',
     path: '/',
-    icon: <House color="black" size={24} />,
+    icon: <FaHome color="black" size={24} />, // Ícono de Home
   },
   {
     title: 'Profiles',
     path: '/profiles',
-    icon: <UsersRound color="black" size={24} />,
+    icon: <FaUsers color="black" size={24} />, // Ícono de Usuarios
     submenu: true,
     subMenuItems: [
       { title: 'Clientes', path: '/profiles/clients' },
@@ -22,7 +22,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
   {
     title: 'Media',
     path: '/media',
-    icon: <Rss color="black" size={24} />,
+    icon: <FaRss color="black" size={24} />, // Ícono de RSS para Media
     submenu: true,
     subMenuItems: [
       { title: 'Posts', path: '/media/posts' },
