@@ -40,7 +40,6 @@ export const gbpFormSchema = z.object({
   certification: z.string().min(1, 'Ingrese certificación'),
   positions: z.string().min(1, 'Ingrese posiciones'),
   description: z.string().min(1, 'Ingrese una descripción'),
-  createdAt: z.string(),
 });
 
 export type GbpFormSchema = z.infer<typeof gbpFormSchema>;

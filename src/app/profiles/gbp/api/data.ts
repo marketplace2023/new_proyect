@@ -41,6 +41,5 @@ export const gbps = [
     positions: 'CEO, CTO, IT Consultant, Project Manager',
     description:
       'We deliver advanced IT services to businesses worldwide, helping them grow and secure their operations through cutting-edge technology.',
-    createdAt: '2024-01-15',
   },
 ];
