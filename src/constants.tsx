@@ -16,7 +16,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     subMenuItems: [
       { title: 'Clientes', path: '/profiles/clients' },
       { title: 'Gbp', path: '/profiles/gbp' },
-      { title: 'Txt', path: '/profiles/txt' },
+      { title: 'Nap', path: '/profiles/nap' },
     ],
   },
   {
