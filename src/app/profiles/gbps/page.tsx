@@ -4,9 +4,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 
-import GbpsTable from './components/gbp/gbps-table';
-
-const GbpPage = () => {
+const ClientsPage = () => {
   return (
     <>
       <div>
@@ -15,18 +13,16 @@ const GbpPage = () => {
       <div className="flex content-end justify-end">
         <Button variant="default">
           <Link
-            href="/profiles/gbp/create"
+            href="/profiles/clients/create"
             className="inline-flex items-center"
           >
-            Registrar Gbp
+            Crear Gbp
           </Link>
         </Button>
       </div>
-      <div>
-        <GbpsTable />
-      </div>
+      <div></div>
     </>
   );
 };
 
-export default GbpPage;
+export default ClientsPage;

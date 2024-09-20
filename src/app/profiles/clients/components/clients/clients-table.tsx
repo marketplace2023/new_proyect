@@ -33,19 +33,23 @@ const ClientsTable = () => {
       <TableCaption>A list of your recent clients.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Name Client</TableHead>
-          <TableHead>Phone Number</TableHead>
+          <TableHead>First Name</TableHead>
+          <TableHead>Last Name</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Password</TableHead>
+          <TableHead>Email</TableHead>
+          <TableHead>Country</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {clients?.map((client) => (
           <TableRow key={client.id}>
-            <TableCell>{client.attributes.name_client}</TableCell>
-            <TableCell>{client.attributes.phone_number_personal}</TableCell>
+            <TableCell>{client.attributes.first_name}</TableCell>
+            <TableCell>{client.attributes.last_name}</TableCell>
             <TableCell>{client.attributes.email}</TableCell>
             <TableCell>{client.attributes.password}</TableCell>
+            <TableCell>{client.attributes.contact.email}</TableCell>
+            <TableCell>{client.attributes.address.country}</TableCell>
           </TableRow>
         ))}
       </TableBody>
