@@ -46,12 +46,25 @@ export type Client = {
       id: number;
       service_area: string[];
     };
+    propertie: {
+      id: number;
+      property_type: string;
+      address: string;
+      city: string;
+      state: string;
+      postal_code: string;
+      price: number;
+      number_of_bathrooms: number;
+      number_of_bedrooms: number;
+      detailed_description: string;
+      property_status: string[];
+    };
   };
 };
 
 export const fetchClients = async (): Promise<Client[]> => {
   const response = await fetch(
-    'http://localhost:1337/api/clients?populate=contact,address,website,payment,service,service_area',
+    'http://localhost:1337/api/clients?populate=contact,address,website,payment,service,service_area,propertie,',
   );
   const data = await response.json();
 
@@ -98,6 +111,24 @@ export const fetchClients = async (): Promise<Client[]> => {
         id: client.attributes.service_area?.data?.id,
         service_area:
           client.attributes.service_area?.data?.attributes?.service_area,
+      },
+      propertie: {
+        id: client.attributes.propertie?.data?.id,
+        property_type:
+          client.attributes.propertie?.data?.attributes?.property_type,
+        address: client.attributes.propertie?.data?.attributes?.address,
+        city: client.attributes.propertie?.data?.attributes?.city,
+        state: client.attributes.propertie?.data?.attributes?.state,
+        postal_code: client.attributes.propertie?.data?.attributes?.postal_code,
+        price: client.attributes.propertie?.data?.attributes?.price,
+        number_of_bathrooms:
+          client.attributes.propertie?.data?.attributes?.number_of_bathrooms,
+        number_of_bedrooms:
+          client.attributes.propertie?.data?.attributes?.number_of_bedrooms,
+        detailed_description:
+          client.attributes.propertie?.data?.attributes?.detailed_description,
+        property_status:
+          client.attributes.propertie?.data?.attributes?.property_status,
       },
     },
   }));
