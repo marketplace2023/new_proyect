@@ -10,6 +10,7 @@ export type Client = {
     slogan: string;
     work_hours: string[];
     start_year: number;
+    category: string;
     contact: {
       id: number;
       phone: string;
@@ -50,7 +51,7 @@ export type Client = {
 
 export const fetchClients = async (): Promise<Client[]> => {
   const response = await fetch(
-    'http://localhost:1337/api/clients?populate=contact,address',
+    'http://localhost:1337/api/clients?populate=contact,address,website,payment,service,service_area',
   );
   const data = await response.json();
 
@@ -87,7 +88,7 @@ export const fetchClients = async (): Promise<Client[]> => {
         payment_methods:
           client.attributes.payment?.data?.attributes?.payment_methods,
       },
-      services: {
+      service: {
         id: client.attributes.services?.data?.id,
         service_name:
           client.attributes.services?.data?.attributes?.service_name,

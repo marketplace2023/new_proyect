@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 
+import GbpsTable from './components/gbps-table';
+
 const ClientsPage = () => {
   return (
     <>
@@ -20,7 +22,9 @@ const ClientsPage = () => {
           </Link>
         </Button>
       </div>
-      <div></div>
+      <div>
+        <GbpsTable />
+      </div>
     </>
   );
 };

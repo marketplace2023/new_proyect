@@ -19,9 +19,9 @@ import {
 } from '@/components/ui/table';
 import { useQuery } from '@tanstack/react-query';
 
-import { Client, fetchClients } from '../../api/api-clients';
+import { Client, fetchClients } from '../../clients/api/api-clients';
 
-const ClientsTable = () => {
+const GbpsTable = () => {
   const {
     data: clients,
     isLoading,
@@ -45,13 +45,14 @@ const ClientsTable = () => {
   return (
     <>
       <Table>
-        <TableCaption>A list of your recent clients.</TableCaption>
+        <TableCaption>A list of your recent gbps.</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead>First Name</TableHead>
-            <TableHead>Last Name</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Passsword</TableHead>
+            <TableHead>Name Bussines</TableHead>
+            <TableHead>Category</TableHead>
+            <TableHead>Address</TableHead>
+            <TableHead>Phone</TableHead>
+            <TableHead>Web site</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -61,34 +62,41 @@ const ClientsTable = () => {
               onClick={() => handleRowClick(client)}
               className="cursor-pointer"
             >
-              <TableCell>{client.attributes.first_name}</TableCell>
-              <TableCell>{client.attributes.last_name}</TableCell>
-              <TableCell>{client.attributes.email}</TableCell>
-              <TableCell>{client.attributes.password}</TableCell>
+              <TableCell>{client.attributes.business_name}</TableCell>
+              <TableCell>{client.attributes.category}</TableCell>
+              <TableCell>
+                {client.attributes.address.address_line_one}
+              </TableCell>
+              <TableCell>{client.attributes.contact.phone}</TableCell>
+              <TableCell>{client.attributes.website.website_url}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-
       {/* Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Client Information</DialogTitle>
+            <DialogTitle>Gbp Client Information</DialogTitle>
           </DialogHeader>
           <div>
             <p>
-              <strong>First Name:</strong>{' '}
-              {selectedClient?.attributes.first_name}
+              <strong>Name Bussines</strong>{' '}
+              {selectedClient?.attributes.business_name}
             </p>
             <p>
-              <strong>Last Name:</strong> {selectedClient?.attributes.last_name}
+              <strong>Category:</strong> {selectedClient?.attributes.category}
             </p>
             <p>
-              <strong>Email:</strong> {selectedClient?.attributes.email}
+              <strong>Address:</strong>{' '}
+              {selectedClient?.attributes.address.address_line_one}
             </p>
             <p>
-              <strong>Password:</strong> {selectedClient?.attributes.password}
+              <strong>Phone:</strong> {selectedClient?.attributes.contact.phone}
+            </p>
+            <p>
+              <strong>Website:</strong>{' '}
+              {selectedClient?.attributes.website.website_url}
             </p>
           </div>
         </DialogContent>
@@ -97,4 +105,4 @@ const ClientsTable = () => {
   );
 };
 
-export default ClientsTable;
+export default GbpsTable;
