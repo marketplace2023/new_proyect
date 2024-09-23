@@ -46,25 +46,12 @@ export type Client = {
       id: number;
       service_area: string[];
     };
-    propertie: {
-      id: number;
-      property_type: string;
-      address: string;
-      city: string;
-      state: string;
-      postal_code: string;
-      price: number;
-      number_of_bathrooms: number;
-      number_of_bedrooms: number;
-      detailed_description: string;
-      property_status: string[];
-    };
   };
 };
 
 export const fetchClients = async (): Promise<Client[]> => {
   const response = await fetch(
-    'http://localhost:1337/api/clients?populate=contact,address,website,payment,service,service_area,propertie,',
+    'http://localhost:1337/api/clients?populate=contact,address,website,payment,service,service_area,',
   );
   const data = await response.json();
 
