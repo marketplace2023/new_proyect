@@ -99,24 +99,6 @@ export const fetchClients = async (): Promise<Client[]> => {
         service_area:
           client.attributes.service_area?.data?.attributes?.service_area,
       },
-      propertie: {
-        id: client.attributes.propertie?.data?.id,
-        property_type:
-          client.attributes.propertie?.data?.attributes?.property_type,
-        address: client.attributes.propertie?.data?.attributes?.address,
-        city: client.attributes.propertie?.data?.attributes?.city,
-        state: client.attributes.propertie?.data?.attributes?.state,
-        postal_code: client.attributes.propertie?.data?.attributes?.postal_code,
-        price: client.attributes.propertie?.data?.attributes?.price,
-        number_of_bathrooms:
-          client.attributes.propertie?.data?.attributes?.number_of_bathrooms,
-        number_of_bedrooms:
-          client.attributes.propertie?.data?.attributes?.number_of_bedrooms,
-        detailed_description:
-          client.attributes.propertie?.data?.attributes?.detailed_description,
-        property_status:
-          client.attributes.propertie?.data?.attributes?.property_status,
-      },
     },
   }));
 };
