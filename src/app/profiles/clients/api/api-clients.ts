@@ -61,11 +61,13 @@ export const fetchClients = async (): Promise<Client[]> => {
       ...client.attributes,
       contact: {
         id: client.attributes.contact?.data?.id,
+        clientId: client.attributes.contact?.data?.attributes?.clientId,
         phone: client.attributes.contact?.data?.attributes?.phone,
         email: client.attributes.contact?.data?.attributes?.email,
       },
       address: {
         id: client.attributes.address?.data?.id,
+        clientId: client.attributes.address?.data?.attributes?.clientId,
         address_line_one:
           client.attributes.address?.data?.attributes?.address_line_one,
         city: client.attributes.address?.data?.attributes?.city,
@@ -75,6 +77,7 @@ export const fetchClients = async (): Promise<Client[]> => {
       },
       website: {
         id: client.attributes.website?.data?.id,
+        clientId: client.attributes.website?.data?.attributes?.clientId,
         website_url: client.attributes.website?.data?.attributes?.website_url,
         facebook: client.attributes.website?.data?.attributes?.facebook,
         linkedin: client.attributes.website?.data?.attributes?.linkedin,
@@ -85,37 +88,22 @@ export const fetchClients = async (): Promise<Client[]> => {
       },
       payment: {
         id: client.attributes.payment?.data?.id,
+        clientId: client.attributes.payment?.data?.attributes?.clientId,
         payment_methods:
           client.attributes.payment?.data?.attributes?.payment_methods,
       },
       service: {
         id: client.attributes.services?.data?.id,
+        clientId: client.attributes.services?.data?.attributes?.clientId,
         service_name:
           client.attributes.services?.data?.attributes?.service_name,
         specialties: client.attributes.services?.data?.attributes?.specialties,
       },
       service_area: {
         id: client.attributes.service_area?.data?.id,
+        clientId: client.attributes.service_area?.data?.attributes?.clientId,
         service_area:
           client.attributes.service_area?.data?.attributes?.service_area,
-      },
-      propertie: {
-        id: client.attributes.propertie?.data?.id,
-        property_type:
-          client.attributes.propertie?.data?.attributes?.property_type,
-        address: client.attributes.propertie?.data?.attributes?.address,
-        city: client.attributes.propertie?.data?.attributes?.city,
-        state: client.attributes.propertie?.data?.attributes?.state,
-        postal_code: client.attributes.propertie?.data?.attributes?.postal_code,
-        price: client.attributes.propertie?.data?.attributes?.price,
-        number_of_bathrooms:
-          client.attributes.propertie?.data?.attributes?.number_of_bathrooms,
-        number_of_bedrooms:
-          client.attributes.propertie?.data?.attributes?.number_of_bedrooms,
-        detailed_description:
-          client.attributes.propertie?.data?.attributes?.detailed_description,
-        property_status:
-          client.attributes.propertie?.data?.attributes?.property_status,
       },
     },
   }));
