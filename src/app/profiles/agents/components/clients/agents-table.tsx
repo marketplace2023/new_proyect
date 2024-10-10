@@ -21,7 +21,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { Client, fetchClients } from '../../api/api-clients';
 
-const ClientsTable = () => {
+const AgentsTable = () => {
   const {
     data: clients,
     isLoading,
@@ -97,4 +97,4 @@ const ClientsTable = () => {
   );
 };
 
-export default ClientsTable;
+export default AgentsTable;

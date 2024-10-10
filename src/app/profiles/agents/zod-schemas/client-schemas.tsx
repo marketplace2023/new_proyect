@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const clientFormSchema = z.object({
+export const agentFormSchema = z.object({
   id: z.string().uuid(),
   first_name: z.string().min(1, 'El nombre es obligatorio'),
   certifications: z.array(z.string()).optional(),
@@ -34,4 +34,4 @@ export const clientFormSchema = z.object({
   service_area: z.array(z.string()).optional(),
 });
 
-export type ClientFormSchema = z.infer<typeof clientFormSchema>;
+export type AgentFormSchema = z.infer<typeof agentFormSchema>;

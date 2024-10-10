@@ -6,8 +6,8 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { MdRealEstateAgent } from 'react-icons/md';
 import { SiGooglemybusiness } from 'react-icons/si';
 
-import { Client, fetchClients } from './profiles/agents/api/api-clients';
-import SummaryCard from './profiles/shared/components/card-info';
+import { Client, fetchClients } from '../profiles/agents/api/api-clients';
+import SummaryCard from '../profiles/shared/components/card-info';
 
 export default function Home() {
   const [clients, setClients] = useState<Client[]>([]);

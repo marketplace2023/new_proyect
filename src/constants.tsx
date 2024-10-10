@@ -1,4 +1,4 @@
-import { FaHome, FaRss, FaUsers } from 'react-icons/fa'; // Nuevos íconos de react-icons
+import { FaHome, FaUsers } from 'react-icons/fa'; // Nuevos íconos de react-icons
 
 import { SideNavItem } from './types';
 
@@ -14,20 +14,8 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     icon: <FaUsers color="black" size={24} />, // Ícono de Usuarios
     submenu: true,
     subMenuItems: [
-      { title: 'Clientes', path: '/profiles/clients' },
-      { title: 'Gbp', path: '/profiles/gbps' },
-      { title: 'Nap', path: '/profiles/naps' },
-    ],
-  },
-  {
-    title: 'Media',
-    path: '/media',
-    icon: <FaRss color="black" size={24} />, // Ícono de RSS para Media
-    submenu: true,
-    subMenuItems: [
-      { title: 'Posts', path: '/media/posts' },
-      { title: 'Reviews', path: '/media/reviews' },
-      { title: 'Notices', path: '/media/notices' },
+      { title: 'Agents', path: '/profiles/agents' },
+      { title: 'Website Brief', path: '/profiles/websites' },
     ],
   },
 ];

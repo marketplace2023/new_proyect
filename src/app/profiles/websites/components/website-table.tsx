@@ -19,9 +19,9 @@ import {
 } from '@/components/ui/table';
 import { useQuery } from '@tanstack/react-query';
 
-import { Client, fetchClients } from '../../clients/api/api-clients';
+import { Client, fetchClients } from '../../agents/api/api-clients';
 
-const NapsTable = () => {
+const WebsitesTable = () => {
   const {
     data: clients,
     isLoading,
@@ -45,14 +45,13 @@ const NapsTable = () => {
   return (
     <>
       <Table>
-        <TableCaption>A list of your recent naps.</TableCaption>
+        <TableCaption>A list of your recent clients.</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead>Bussines Name</TableHead>
-            <TableHead>Busines Address</TableHead>
-            <TableHead>Zipcode</TableHead>
-            <TableHead>Phone</TableHead>
+            <TableHead>First Name</TableHead>
+            <TableHead>Last Name</TableHead>
             <TableHead>Email</TableHead>
+            <TableHead>Passsword</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -62,40 +61,34 @@ const NapsTable = () => {
               onClick={() => handleRowClick(client)}
               className="cursor-pointer"
             >
-              <TableCell>{client.attributes.business_name}</TableCell>
-              <TableCell>
-                {client.attributes.address.address_line_one}
-              </TableCell>
-              <TableCell>{client.attributes.address.zip}</TableCell>
-              <TableCell>{client.attributes.contact.phone}</TableCell>
+              <TableCell>{client.attributes.first_name}</TableCell>
+              <TableCell>{client.attributes.last_name}</TableCell>
               <TableCell>{client.attributes.email}</TableCell>
+              <TableCell>{client.attributes.password}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+
       {/* Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Nap Client Information</DialogTitle>
+            <DialogTitle>Client Information</DialogTitle>
           </DialogHeader>
           <div>
             <p>
-              <strong>Name Bussines</strong>{' '}
-              {selectedClient?.attributes.business_name}
+              <strong>First Name:</strong>{' '}
+              {selectedClient?.attributes.first_name}
             </p>
             <p>
-              <strong>Busines Address:</strong>{' '}
-              {selectedClient?.attributes.address.address_line_one}
-            </p>
-            <p>
-              <strong>Zipcode:</strong> {selectedClient?.attributes.address.zip}
-            </p>
-            <p>
-              <strong>Phone:</strong> {selectedClient?.attributes.contact.phone}
+              <strong>Last Name:</strong> {selectedClient?.attributes.last_name}
             </p>
             <p>
               <strong>Email:</strong> {selectedClient?.attributes.email}
+            </p>
+            <p>
+              <strong>Password:</strong> {selectedClient?.attributes.password}
             </p>
           </div>
         </DialogContent>
@@ -104,4 +97,4 @@ const NapsTable = () => {
   );
 };
 
-export default NapsTable;
+export default WebsitesTable;
